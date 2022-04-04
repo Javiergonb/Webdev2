@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Actividad</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="myscript.js"></script>
+    <script src="formscript.js"></script>
+</head>
+<body>
+    <div class="Solicitud">
+        <h1>
+            Agregar Actividad
+        </h1>
+
+        <div class="formulario">
+            <form id="formulario" method="post" onsubmit="return validarForm()">
+                <div class="Donde?">
+                    <label for="Donde?">¿Donde?</label>
+                    <br>
+                    <br>
+
+                    <div class="Regiones">
+                        <select id="regiones"></select>
+                        <small id="regionError"></small>
+                        <select id="comunas"></select>
+                        <small id="comunasError"></small>
+                        
+                    </div>
+                    <br>
+                    <div class="sector">
+                        <label for="Sector">Describa el sector(opcional)</label>
+                        <input type="text" id="Sector" size="100">
+                        <small id="sectorError"></small>
+                    </div>
+                    <br>
+                </div>
+                <div class="Organiza">
+                    <label for="¿Quien Organiza?">Quien Organiza?</label>
+                    <br>
+                    <br>
+                    <div class="name">
+                        <label >Nombre:</label><br>
+                        <input type="text" size="100" placeholder="Ingrese nombre del organizador" id="name" name="nombre" maxlength="200">
+                        <small id="nameError"></small>
+                    </div>
+                    <br>
+                    <div class="Email">
+                        <label >Email de organizador:</label><br>
+                        <input type="text" size="100" placeholder="Ingrese Email del organizador" id="email" name="email" maxlength="200">
+                        <small id="emailError"></small>
+                    </div>
+                    <br>
+                    <div class="Celular">
+                        <label >Numero celular del organizador:</label><br>
+                        <input type="text" size="16" placeholder="Ingrese numero celular" id="celular" name="celular" maxlength="200">
+                        <small id="celError"></small>
+                    </div>
+                    <br>
+                    <div class="Contacto">
+                        <label for="Contacto">Contactar por:</label>
+                        <div id="Contactodivfather">
+                            <div id="contacto_div_1">
+                                
+                                <select name="contacto_1" id="contacto_1" size="7" onclick="">
+                                    <option value="whatsapp">Whatsapp</option>
+                                    <option value="telegram">Telegram</option>
+                                    <option value="twitter">Twitter</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="tiktok">Tiktok</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                                <input type="text" id="input_1">
+                                <small id="contactoError"></small>
+                               
+                                    
+                               
+                            </div>  
+                        </div>
+                        <div>
+                            <a href="#" onclick="crearContacto()">+Añadir Contacto</a> 
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <br>
+                <div class="Cuando">
+                    <label for="Cuando">¿Cuando y de que trata?</label><br>
+                    <br>
+
+                    <div class="Inicio">
+                        <label for="Inicio">Ingrese la fecha de inicio de la actividad:</label><br>
+                        <input type="text" name="Inicio" id="Inicio" size="20" value=>
+                        <small id="dateError"></small>
+                    </div>
+                    <br>
+                    <div class="Fin">
+                        <label for="Fin">Ingrese la fecha finalizacion de la actividad:</label><br>
+                        <input type="text" name="Fin" id="Fin" size="20">
+                    </div>
+                    <br>
+                    <div class="Descripcion">
+                        <label for="Descripcion">Descripcion de actividad:</label><br>
+                        <textarea name="Descripcion" id="Descripcion" cols="50" rows="10"></textarea>
+                    </div>
+                    <br>
+                    <div class="Tema" id="Tema">
+                        <label for="Tema">Eliga un tema:</label>
+                        <select name="tema" id="tema" size="9" onchange="temaOtro()">
+                            <option value="musica">Musica</option>
+                            <option value="deporte">Deporte</option>
+                            <option value="ciencias">Ciencas</option>
+                            <option value="religion">Religion</option>
+                            <option value="politica">Politica</option>
+                            <option value="juegos">Juegos</option>
+                            <option value="baile">Baile</option>
+                            <option value="comida">Comida</option>
+                            <option value="otro">Otro</option>
+                          </select>
+                          
+                          <small id="temaError"></small>
+                    </div>
+                    <br>
+                    <div class="File">
+                        <label for="file">Ingrese la foto de la actividad:</label><br>
+                        <input type="file" name="file" id="file" >
+                        <button>Agregar otra foto</button>
+                        <small id="fotoError"></small>
+                    </div>
+
+
+                </div>
+                <br>
+                <div class="button">
+                    <button type="submit" class="button">Agregar esta actividad</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="contenedor" id="contenedorErrores">
+        </div>
+    </div>
+</body>
+
+
